@@ -10,4 +10,7 @@ https://www.dotnetnakama.com/blog/enriched-web-api-documentation-using-swagger-o
 # ref3
 https://code-maze.com/swagger-ui-asp-net-core-web-api/
 
+# ref4
+https://codingsonata.com/swagger-openapi-configurations-in-asp-net-core-web-api/
+
 
