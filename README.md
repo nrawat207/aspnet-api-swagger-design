@@ -3,4 +3,6 @@ Implement api with swagger design specification
 
 #references
 https://github.com/thangchung/clean-code-dotnet#error-handling
+https://www.dotnetnakama.com/blog/enriched-web-api-documentation-using-swagger-openapi-in-asp-dotnet-core/
+
 
