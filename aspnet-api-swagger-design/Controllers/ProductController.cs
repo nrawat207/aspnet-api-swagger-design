@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using aspnet_api_swagger_design.CustomExceptions;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace aspnet_api_swagger_design.Controllers
@@ -43,6 +44,8 @@ namespace aspnet_api_swagger_design.Controllers
         /// <response code="201">Returns the newly created product</response>
         /// <response code="400">If the product is null</response>
         /// <response code="401">Unauthorized access to create new product</response>
+        [ProducesResponseType(typeof(Product), 201)]
+        [ProducesResponseType(400)]
         [HttpPost]       
         public ActionResult<Product> Post(Product product)
         {
@@ -50,8 +53,13 @@ namespace aspnet_api_swagger_design.Controllers
                 return BadRequest("product is null");
             }
 
+            if(product.ProductId == 0)
+                throw new CustomAppException("Unable to create product");
+                        
+            var response = ApiResponse<Product>.Success(product);
+
             // Logic to create new Employee
-            return Ok(new Product());
+            return Ok(response);
         }
 
 

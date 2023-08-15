@@ -1,3 +1,4 @@
+using aspnet_api_swagger_design.Middlewares;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -50,4 +51,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.UseMiddleware<CustomExceptionHandlerMiddleware>();
+
 app.Run();
+
